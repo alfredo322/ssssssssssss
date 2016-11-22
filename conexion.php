@@ -2,7 +2,7 @@
 //conexion con la base
 
 $link=mysql_connect("localhost","root","")or die("<h2>No se encuentra el servicio<h2>");
-$db=mysql_select_db("estudiante",$link)or die("<h2>Error de conexion<h2>");
+$db=mysql_select_db("general",$link)or die("<h2>Error de conexion<h2>");
 
 //Datos de formulario
 
