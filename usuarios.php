@@ -45,7 +45,7 @@ class Usuarios extends CI_Controller{
 		
 		$sql= "select *  from maestra";
 			 $query = $this->db->query($sql, array($query));
-              $data['estudiantes']=$query->result_array();
+              $data['general']=$query->result_array();
 			 // print_r($query->result_array());
 			  
 		$this->load->view('lista',$data);
