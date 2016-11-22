@@ -13,7 +13,7 @@ class Home extends CI_Controller
 	}
 	public function mostrarInformacion()
 	{
-		$result=$this->db->get('maestra1K');
+		$result=$this->db->get('maestra');
 		$data=array('consulta'=>$result);
 		$this->load->view('home_view',$data);
 	}
