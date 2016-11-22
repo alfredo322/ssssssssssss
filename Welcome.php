@@ -20,16 +20,10 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->load->view('formulario');
 		
 	}
-
-
-	public function formulario()
-	{
-		$this->load->view('progra/formulario');
-	}
-
+	
 	public function __construct(){
 		parent::__construct();
 		$this->load->model('formulario_model');
@@ -52,7 +46,7 @@ class Welcome extends CI_Controller {
 		$this->load->view('progra/formulario');
 		$query = ''; //declaramos para evitar advertencias de PHP
 		$nombre = $this->input->post('Nombre', TRUE);
-		$sql= "insert into maestra1k(Nombres,Apellidos,Edad,Fecha_nacimiento)values('$Nombres','$Apellidos','$Edad','$Fecha_nacimiento')";
+		$sql= "insert into maestra(Nombres,Apellidos,Edad,Fecha_nacimiento)values('$Nombres','$Apellidos','$Edad','$Fecha_nacimiento')";
 		$query = $this->db->query($sql, array($query));
 		redirect('/controlador/formulario', 'refresh'); //redirecciona para seguir insertando
 		 }
@@ -78,8 +72,7 @@ class Welcome extends CI_Controller {
 	{
 		$Direccion=$this->input->post('Direccion');
 		$this->session->set_userdata($Direccion);
-		$data = array('Nombre' => $Nombre,
-						'Direccion'=>$Direccion );
+		$data = array('Nombre' => $Nombre,'Direccion'=>$Direccion );
 		$this->load->view('3_Formulario_pract5',$data);
 
 	}
